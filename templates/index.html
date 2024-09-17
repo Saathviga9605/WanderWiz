@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderwiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div id="dynamic-image"></div>
+    <div class="container">
+        <h1>Wanderwiz</h1>
+        <h2>Your Personalised Travel Itinerary Generator</h2>
+        <form id="preferences-form">
+            <label for="destination">Where do you want to go?</label>
+            <input type="text" id="destination" name="destination" list="suggestions" placeholder="Any place you like!" required>
+            <datalist id="suggestions"></datalist>
+
+            <label for="experience">What kind of travel experience are you looking for? (Select up to 3)</label>
+            <div class="dropdown-container">
+                <input type="text" id="experience-input" placeholder="Select from dropdown!" readonly>
+                <div class="dropdown-content" id="dropdown-content"></div>
+            </div>
+            <div class="selected-options" id="selected-options"></div>
+
+            <label for="transportation">What are your preferred modes of transportation? (Comma-separated)</label>
+            <input type="text" id="transportation" name="transportation" placeholder="How do you like to travel?" required>
+
+            <label for="travel-style">What is your travel style?</label>
+            <input type="text" id="travel-style" name="travel-style" placeholder="Examples: Family, Adventure, Luxury" required>
+
+            <label for="dietary-restrictions">Do you have any dietary restrictions or allergies?</label>
+            <select id="dietary-restrictions" name="dietary-restrictions" required>
+                <option value="">Any restrictions?</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <div id="dietary-restrictions-detail">
+                <label for="dietary-details">Please specify:</label>
+                <input type="text" id="dietary-details" name="dietary-details">
+            </div>
+
+            <label for="month">Month of Travel:</label>
+            <select id="month" name="month" required>
+                <option value="">Your month of travel ?</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+
+            <label for="budget">What's your budget?(In USD)</label>
+            <input type="number" id="budget" name="budget" placeholder="Budget matters !" required>
+
+            <label for="interests">Interests (comma-separated):</label>
+            <input type="text" id="interests" name="interests" placeholder="What do you like to do? (Cooking, Gardening etc)">
+
+            <label for="duration">Trip Duration (days):</label>
+            <input type="number" id="duration" name="duration" placeholder = "How long?" required>
+
+            <button type="submit">Get your personalised itinerary now!</button>
+
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

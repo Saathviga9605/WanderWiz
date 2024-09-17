@@ -1,0 +1,194 @@
+body {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, #92fe9d 0%, #00c9ff 100%);
+    animation: backgroundMove 10s ease-in-out infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: background-image 1s ease-in-out;
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    background-image: radial-gradient(circle, #feada6 0%, #f5efef 100%);
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards 0.5s; 
+}
+
+/* Container Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #333;
+    transform: scale(0.9);
+    transition: transform 0.4s ease; 
+}
+
+h1:hover {
+    transform: scale(1); 
+}
+
+h2 {
+    text-align: center;
+    opacity: 0.8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1s; 
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+label {
+    margin-top: 10px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInLabel 1s forwards 1.2s; 
+}
+
+@keyframes fadeInLabel {
+    to {
+        opacity: 1;
+    }
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#another{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+#another, button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    font-family: 'Baloo Bhaijaan 2';
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: bounce 2s infinite ease; 
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); 
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+#results {
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s; 
+}
+
+#dietary-restrictions-detail {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    max-height: 200px;
+    overflow-y: auto; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content div:hover {
+    background-color: #f0f0f0;
+}
+
+
+.selected-options {
+    margin-top: 10px;
+}
+
+.selected-item {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#dietary-restrictions-detail {
+    display: none;
+}
+

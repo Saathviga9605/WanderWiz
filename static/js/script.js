@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.travel-image');
+
+    images.forEach(image => {
+        const randomTop = Math.random() * (window.innerHeight - image.offsetHeight);
+        const randomLeft = Math.random() * (window.innerWidth - image.offsetWidth);
+        
+        const randomRotation = Math.random() * 60 - 30; 
+        
+        image.style.top = `${randomTop}px`;
+        image.style.left = `${randomLeft}px`;
+        
+        image.style.transform = `rotate(${randomRotation}deg)`;
+    });
+    
     const form = document.getElementById('preferences-form');
     const resultsDiv = document.getElementById('results');
     const experienceInput = document.getElementById('experience-input');
@@ -53,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function renderSelectedOptions() {
         selectedOptionsDiv.innerHTML = selectedExperiences
-            .map(exp => `<div class="selected-item" data-value="${exp}">${exp} <span class="remove-item">×</span></div>`) // Corrected HTML syntax
+            .map(exp => `<div class="selected-item" data-value="${exp}">${exp} <span class="remove-item">×</span></div>`)
             .join('');
     }    
 
     function renderSelectedOptions() {
         selectedOptionsDiv.innerHTML = selectedExperiences
-            .map(exp => `<div class="selected-item" data-value="${exp}">${exp} <span class="remove-item">×</span></div>`) // Corrected HTML syntax
+            .map(exp => `<div class="selected-item" data-value="${exp}">${exp} <span class="remove-item">×</span></div>`) 
             .join('');
     }
 

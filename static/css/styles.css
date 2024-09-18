@@ -198,6 +198,27 @@ button:hover {
     z-index: 1;
 }
 
+#travel1 {
+    top: 50px; 
+    left: 10px;
+    transform: rotate(-45deg);  
+}
+
+#travel2 {
+    top: 300px; 
+    right: 50px; 
+}
+
+#travel3 {
+    bottom: 300px; 
+    left: 10px; 
+}
+
+#travel4 {
+    bottom: 30px; 
+    right: 10px;
+}
+
 .travel-image:hover {
     transform: scale(1.2) rotate(0deg);  
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);

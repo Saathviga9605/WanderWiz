@@ -1,18 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.travel-image');
-
-    images.forEach(image => {
-        const randomTop = Math.random() * (window.innerHeight - image.offsetHeight);
-        const randomLeft = Math.random() * (window.innerWidth - image.offsetWidth);
-        
-        const randomRotation = Math.random() * 60 - 30; 
-        
-        image.style.top = `${randomTop}px`;
-        image.style.left = `${randomLeft}px`;
-        
-        image.style.transform = `rotate(${randomRotation}deg)`;
-    });
-    
     const form = document.getElementById('preferences-form');
     const resultsDiv = document.getElementById('results');
     const experienceInput = document.getElementById('experience-input');

@@ -38,12 +38,41 @@ body {
     animation: fadeInUp 1s forwards 0.5s; 
 }
 
-/* Container Animation */
 @keyframes fadeInUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+#translate-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#translate-wrapper {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+#translate-text {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px; 
+}
+
+#google_translate_element {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 h1 {
@@ -97,73 +126,45 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-input:focus, select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
-    transform: scale(1.05);
-}
-
-#another{
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
 #another, button {
-    margin-top: 20px;
+    display:block;
+    text-align: center;
     padding: 10px;
-    background-color: #007bff;
-    font-family: 'Baloo Bhaijaan 2';
+    background-color: #00c9ff;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    animation: bounce 2s infinite ease; 
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
-    transform: scale(1.1); 
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-#results {
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 2s forwards 1.5s; 
-}
-
-#dietary-restrictions-detail {
-    display: none;
-}
-
-html {
-    scroll-behavior: smooth;
+    background-color: #0091d0;
 }
 
 .dropdown-container {
     position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#experience-input {
+    width: 100%;
 }
 
 .dropdown-content {
-    display: none; 
+    display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
     background-color: #fff;
-    min-width: 200px;
-    max-height: 200px;
-    overflow-y: auto; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .dropdown-content div {
@@ -172,23 +173,27 @@ html {
 }
 
 .dropdown-content div:hover {
-    background-color: #f0f0f0;
+    background-color: #f1f1f1;
 }
-
 
 .selected-options {
     margin-top: 10px;
 }
 
-.selected-item {
+.selected-option {
     display: inline-block;
-    background-color: #e0e0e0;
     padding: 5px 10px;
-    margin: 5px;
+    background-color: #00c9ff;
+    color: white;
     border-radius: 5px;
+    margin-right: 5px;
+}
+
+#results {
+    margin-top: 20px;
+    text-align: center;
 }
 
 #dietary-restrictions-detail {
     display: none;
 }
-

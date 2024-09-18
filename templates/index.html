@@ -11,6 +11,12 @@
 </head>
 <body>
     <div id="dynamic-image"></div>
+    <div id="translate-wrapper">
+        <div id="translate-box">
+            <div id="translate-text">Translate the webpage here!</div>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>    
     <div class="container">
         <h1>Wanderwiz</h1>
         <h2>Your Personalised Travel Itinerary Generator</h2>
@@ -67,13 +73,23 @@
             <input type="text" id="interests" name="interests" placeholder="What do you like to do? (Cooking, Gardening etc)">
 
             <label for="duration">Trip Duration (days):</label>
-            <input type="number" id="duration" name="duration" placeholder = "How long?" required>
+            <input type="number" id="duration" name="duration" placeholder="How long?" required>
 
             <button type="submit">Get your personalised itinerary now!</button>
 
         </form>
         <div id="results"></div>
     </div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,zh,ja,ar,hi,ta,te,kn,as,bn,ml,mr,pa,gu,ur,or,sd,si,ru,pt,it,pl,nl,sv,da,fi,cs,hu,ro,sk,hr,sl,lt,lv,et,el,he,th,tr,vi,ms,id,sw' // 50 languages
+        }, 'google_translate_element');
+    } 
+    </script>
+
     <script src="/static/js/script.js"></script>
 </body>
 </html>

@@ -7,9 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/styles.css">
-    
 </head>
 <body>
+    <div id="translate-wrapper">
+        <div id="translate-box">
+            <div id="translate-text">Translate the webpage here!</div>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
     <br/>
     <br/>
     <br/>
@@ -18,6 +23,18 @@
         <div class="itinerary" id="itinerary"></div>
         <a href="/" class="button" id="another">Generate Another Itinerary</a>
     </div>
+    
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,zh,ja,ar,hi,ta,te,kn,as,bn,ml,mr,pa,gu,ur,or,sd,si,ru,pt,it,pl,nl,sv,da,fi,cs,hu,ro,sk,hr,sl,lt,lv,et,el,he,th,tr,vi,ms,id,sw' // 50 languages
+        }, 'google_translate_element');
+    } 
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const itineraryDiv = document.getElementById('itinerary');

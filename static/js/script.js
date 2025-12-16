@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(form);
         const data = {
             destination: formData.get('destination'),
+            sourceCity: formData.get('source-city'), 
             experience: selectedExperiences,
             transportation: formData.get('transportation').split(',').map(mode => mode.trim()),
             travelStyle: formData.get('travel-style'),

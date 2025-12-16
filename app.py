@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
-from gemini_integration import generate_itinerary
+from langchain_agent import generate_itinerary_with_agent
+import os
 
 app = Flask(__name__)
 
@@ -18,19 +19,24 @@ def generate():
         return jsonify({'error': 'No data received'}), 400
 
     destination = data.get('destination')
-    experience = data.get('experience')
-    transportation = data.get('transportation')
-    travelStyle = data.get('travelStyle')
-    dietaryRestrictions = data.get('dietaryRestrictions')
+    experience = data.get('experience', [])
+    transportation = data.get('transportation', [])
+    travelStyle = data.get('travelStyle', 'Leisure')
+    dietaryRestrictions = data.get('dietaryRestrictions', 'No')
     month = data.get('month')
     budget = data.get('budget')
-    interests = data.get('interests')
+    interests = data.get('interests', [])
     duration = data.get('duration')
+    source_city = data.get('sourceCity', None)
 
     try:
-        itinerary = generate_itinerary(destination, experience, transportation, travelStyle, dietaryRestrictions, month, budget, interests, duration)
+        itinerary = generate_itinerary_with_agent(
+            destination, experience, transportation, travelStyle, 
+            dietaryRestrictions, month, budget, interests, duration, source_city
+        )
         return jsonify({'itinerary': itinerary})
     except Exception as e:
+        print(f"Error: {str(e)}")
         return jsonify({'error': 'Error generating itinerary. Please try again.'}), 500
 
 if __name__ == '__main__':

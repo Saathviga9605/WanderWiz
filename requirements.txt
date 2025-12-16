@@ -1,2 +1,5 @@
-Flask
-openai
+flask==3.0.0
+langchain==0.1.0
+langchain-openai==0.0.2
+openai==1.6.1
+requests==2.31.0
